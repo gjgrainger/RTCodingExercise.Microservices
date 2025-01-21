@@ -1,5 +1,6 @@
 ﻿using MassTransit;
 using RabbitMQ.Client;
+using WebMVC.Services;
 
 namespace RTCodingExercise.WebMVC
 {
@@ -18,6 +19,9 @@ namespace RTCodingExercise.WebMVC
             services.AddControllers();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            services.AddHttpClient<IPlateClientService, PlateClientService>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddMassTransit(x =>
             {
@@ -44,6 +48,16 @@ namespace RTCodingExercise.WebMVC
                 });
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                    .SetIsOriginAllowed((host) => true)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
             services.AddMassTransitHostedService();
         }
 
@@ -68,6 +82,8 @@ namespace RTCodingExercise.WebMVC
             app.UseStaticFiles();
             app.UseForwardedHeaders();
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

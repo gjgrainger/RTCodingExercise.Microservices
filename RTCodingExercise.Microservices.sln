@@ -31,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHost.Customization", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.UnitTests", "src\Services\Catalog\Catalog.UnitTests\Catalog.UnitTests.csproj", "{D542A113-5EFD-467D-82F6-0007A10C57B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationEvents", "src\BuildingBlocks\EventBus\IntegrationEvents\IntegrationEvents.csproj", "{CCCA3C50-1C76-43FC-826F-2CE49FEEAA20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationEvents", "src\BuildingBlocks\EventBus\IntegrationEvents\IntegrationEvents.csproj", "{CCCA3C50-1C76-43FC-826F-2CE49FEEAA20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC.UnitTests", "src\Web\WebMVC.UnitTests\WebMVC.UnitTests.csproj", "{29902EB0-0A34-4860-B386-F26A6A9E83DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC.UnitTests", "src\Web\WebMVC.UnitTests\WebMVC.UnitTests.csproj", "{29902EB0-0A34-4860-B386-F26A6A9E83DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
